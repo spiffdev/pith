@@ -41,7 +41,7 @@ export class FilterElement extends Element {
     const tmpCanvasWidth = width + 2 * px
     const tmpCanvasHeight = height + 2 * py
 
-    if (tmpCanvasWidth < 1 || tmpCanvasHeight < 1) {
+    if (Number.isNaN(tmpCanvasWidth) || Number.isNaN(tmpCanvasHeight) || tmpCanvasWidth < 1 || tmpCanvasHeight < 1) {
       return
     }
 

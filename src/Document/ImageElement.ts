@@ -115,6 +115,11 @@ export class ImageElement extends RenderedElement {
         documentElement.parent = this
       }
 
+      subDocument.resize(
+        width,
+        height,
+        this.getAttribute('preserveAspectRatio').getString()
+      )
       void subDocument.render()
     } else {
       document.setViewBox({

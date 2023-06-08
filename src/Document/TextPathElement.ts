@@ -336,7 +336,7 @@ export class TextPathElement extends TextElement {
     const spacesNumber = renderText.split(' ').length - 1
     const dx = this.parent.getAttribute('dx').split().map(_ => _.getPixels('x'))
     const dy = this.parent.getAttribute('dy').getPixels('y')
-    const anchor = this.parent.getStyle('text-anchor').getString('start')
+    const anchor = this.getAttribute('text-anchor').getString('start')
     const thisSpacing = this.getStyle('letter-spacing')
     const parentSpacing = this.parent.getStyle('letter-spacing')
     let letterSpacing = 0
@@ -384,7 +384,7 @@ export class TextPathElement extends TextElement {
     this.glyphInfo = []
 
     const fullPathWidth = this.getPathLength()
-    const startOffset = this.getStyle('startOffset').getNumber(0) * fullPathWidth
+    const startOffset = this.getAttribute('startOffset').getNumber(0) * fullPathWidth
     let offset = 0
 
     if (anchor === 'middle'
