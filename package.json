@@ -1,29 +1,25 @@
 {
-  "name": "canvg",
+  "name": "pith",
   "type": "module",
   "version": "4.0.1",
   "description": "JavaScript SVG parser and renderer on Canvas.",
-  "author": "Gabe Lerner",
   "authors": [
     {
-      "name": "Gabe Lerner",
-      "email": "gabelerner@gmail.com"
+      "name": "Liam Parker",
+      "email": "liam@spiff.com.au"
     },
     {
-      "name": "Brett Zamir"
-    },
-    {
-      "name": "Dan Green",
-      "url": "https://twitter.com/dangreen58"
+      "name": "Joshua Jones",
+      "email": "josh@spiff.com.au"
     }
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/canvg/canvg"
+    "url": "https://github.com/spiffdev/pith"
   },
   "bugs": {
-    "url": "https://github.com/canvg/canvg/issues"
+    "url": "https://github.com/spiffdev/pith/issues"
   },
   "keywords": [
     "javascript",
