@@ -1,6 +1,0 @@
-{
-  "main": "index.js",
-  "dependencies": {
-    "canvg": "^4.0.0"
-  }
-}
