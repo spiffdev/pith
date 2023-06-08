@@ -43,6 +43,10 @@ export class PatternElement extends Element {
 
     const patternCanvas = this.document.createCanvas(width, height)
     const patternCtx = patternCanvas.getContext('2d')
+
+    patternCtx.imageSmoothingEnabled = true
+    patternCtx.imageSmoothingQuality = 'high'
+    
     const xAttr = this.getAttribute('x')
     const yAttr = this.getAttribute('y')
 
