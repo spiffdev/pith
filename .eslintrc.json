@@ -10,12 +10,15 @@
   },
   "parserOptions": {
     "tsconfigRootDir": "./",
-    "project": ["./tsconfig.json", "./test/tsconfig.json"]
+    "project": ["./tsconfig.json", "./test/tsconfig.json", "./vite/tsconfig.json"]
   },
   "rules": {
     "prefer-destructuring": "off",
     "no-magic-numbers": "off",
     "max-params": "off",
     "@typescript-eslint/no-magic-numbers": "off"
-  }
+  },
+  "plugins": [
+    "html"
+  ]
 }
