@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="400"
+    height="500" viewBox="0 0 400 500">
+    <defs>
+        <pattern id="text-fill-triple" patternUnits="userSpaceOnUse" width="2520" height="2706" x="0" y="0">
+            <image href="https://assets.app.dev.spiff.com.au/public/assets/a2d3c8ce-982b-416a-a373-67e9286015fa.png"
+                xlink:href="https://assets.app.dev.spiff.com.au/public/assets/a2d3c8ce-982b-416a-a373-67e9286015fa.png"
+                width="2520" height="2706"></image>
+        </pattern>
+        <pattern id="text-fill-two-half" patternUnits="userSpaceOnUse" width="2100" height="2255" x="0" y="0">
+            <image href="https://assets.app.dev.spiff.com.au/public/assets/a2d3c8ce-982b-416a-a373-67e9286015fa.png"
+                xlink:href="https://assets.app.dev.spiff.com.au/public/assets/a2d3c8ce-982b-416a-a373-67e9286015fa.png"
+                width="2100" height="2255"></image>
+        </pattern>
+        <pattern id="text-fill-double" patternUnits="userSpaceOnUse" width="1680" height="1804" x="0" y="0">
+            <image href="https://assets.app.dev.spiff.com.au/public/assets/a2d3c8ce-982b-416a-a373-67e9286015fa.png"
+                xlink:href="https://assets.app.dev.spiff.com.au/public/assets/a2d3c8ce-982b-416a-a373-67e9286015fa.png"
+                width="1680" height="1804"></image>
+        </pattern>
+        <pattern id="text-fill-one-half" patternUnits="userSpaceOnUse" width="1260" height="1353" x="0" y="0">
+            <image href="https://assets.app.dev.spiff.com.au/public/assets/a2d3c8ce-982b-416a-a373-67e9286015fa.png"
+                xlink:href="https://assets.app.dev.spiff.com.au/public/assets/a2d3c8ce-982b-416a-a373-67e9286015fa.png"
+                width="1260" height="1353"></image>
+        </pattern>
+        <pattern id="text-fill-one" patternUnits="userSpaceOnUse" width="840" height="902" x="0" y="0">
+            <image href="https://assets.app.dev.spiff.com.au/public/assets/a2d3c8ce-982b-416a-a373-67e9286015fa.png"
+                xlink:href="https://assets.app.dev.spiff.com.au/public/assets/a2d3c8ce-982b-416a-a373-67e9286015fa.png"
+                width="840" height="902"></image>
+        </pattern>
+        <pattern id="text-fill-three-quarter" patternUnits="userSpaceOnUse" width="630" height="676.5" x="0" y="0">
+            <image href="https://assets.app.dev.spiff.com.au/public/assets/a2d3c8ce-982b-416a-a373-67e9286015fa.png"
+                xlink:href="https://assets.app.dev.spiff.com.au/public/assets/a2d3c8ce-982b-416a-a373-67e9286015fa.png"
+                width="630" height="676.5"></image>
+        </pattern>
+        <pattern id="text-fill-half" patternUnits="userSpaceOnUse" width="420" height="451" x="0" y="0">
+            <image href="https://assets.app.dev.spiff.com.au/public/assets/a2d3c8ce-982b-416a-a373-67e9286015fa.png"
+                xlink:href="https://assets.app.dev.spiff.com.au/public/assets/a2d3c8ce-982b-416a-a373-67e9286015fa.png"
+                width="420" height="451"></image>
+        </pattern>
+        <pattern id="text-fill-quarter" patternUnits="userSpaceOnUse" width="210" height="225.5" x="0" y="0">
+            <image href="https://assets.app.dev.spiff.com.au/public/assets/a2d3c8ce-982b-416a-a373-67e9286015fa.png"
+                xlink:href="https://assets.app.dev.spiff.com.au/public/assets/a2d3c8ce-982b-416a-a373-67e9286015fa.png"
+                width="210" height="225.5"></image>
+        </pattern>
+        <pattern id="text-fill-twentieth" patternUnits="userSpaceOnUse" width="42" height="45.1" x="0" y="0">
+            <image href="https://assets.app.dev.spiff.com.au/public/assets/a2d3c8ce-982b-416a-a373-67e9286015fa.png"
+                xlink:href="https://assets.app.dev.spiff.com.au/public/assets/a2d3c8ce-982b-416a-a373-67e9286015fa.png"
+                width="42" height="45.1"></image>
+        </pattern>
+    </defs>
+    <g transform="matrix(1, 0, 0, 1, 10, 50)">
+        <text font-size="46" fill="url(&quot;#text-fill-triple&quot;)" stroke="black">▬▬▬▬▬ ▬▬▬▬▬</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 10, 100)">
+        <text font-size="46" fill="url(&quot;#text-fill-two-half&quot;)" stroke="black">▬▬▬▬▬ ▬▬▬▬▬</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 10, 150)">
+        <text font-size="46" fill="url(&quot;#text-fill-double&quot;)" stroke="black">▬▬▬▬▬ ▬▬▬▬▬</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 10, 200)">
+        <text font-size="46" fill="url(&quot;#text-fill-one-half&quot;)" stroke="black">▬▬▬▬▬ ▬▬▬▬▬</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 10, 250)">
+        <text font-size="46" fill="url(&quot;#text-fill-one&quot;)" stroke="black">▬▬▬▬▬ ▬▬▬▬▬</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 10, 300)">
+        <text font-size="46" fill="url(&quot;#text-fill-three-quarter&quot;)" stroke="black">▬▬▬▬▬ ▬▬▬▬▬</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 10, 350)">
+        <text font-size="46" fill="url(&quot;#text-fill-half&quot;)" stroke="black">▬▬▬▬▬ ▬▬▬▬▬</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 10, 400)">
+        <text font-size="46" fill="url(&quot;#text-fill-quarter&quot;)" stroke="black">▬▬▬▬▬ ▬▬▬▬▬</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 10, 450)">
+        <text font-size="46" fill="url(&quot;#text-fill-twentieth&quot;)" stroke="black">▬▬▬▬▬ ▬▬▬▬▬</text>
+    </g>
+</svg>
