@@ -1,0 +1,133 @@
+{
+  "name": "canvg",
+  "type": "module",
+  "version": "4.0.1",
+  "description": "JavaScript SVG parser and renderer on Canvas.",
+  "author": "Gabe Lerner",
+  "authors": [
+    {
+      "name": "Gabe Lerner",
+      "email": "gabelerner@gmail.com"
+    },
+    {
+      "name": "Brett Zamir"
+    },
+    {
+      "name": "Dan Green",
+      "url": "https://twitter.com/dangreen58"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/canvg/canvg"
+  },
+  "bugs": {
+    "url": "https://github.com/canvg/canvg/issues"
+  },
+  "keywords": [
+    "javascript",
+    "client",
+    "browser",
+    "svg",
+    "canvas"
+  ],
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "publishConfig": {
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    },
+    "directory": "package"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clear:package": "del ./package",
+    "clear": "del ./package ./dist ./coverage",
+    "prepublishOnly": "run test build clear:package clean-publish",
+    "postpublish": "pnpm clear:package",
+    "emitDeclarations": "tsc --emitDeclarationOnly",
+    "build": "run -p [ rollup -c ] emitDeclarations",
+    "lint": "eslint 'rollup.config.js' 'types/**/*.ts' 'test/**/*.{js,ts}' 'src/**/*.ts'",
+    "jest": "cross-env NODE_ENV=test jest -c jest.config.json",
+    "test:size": "size-limit",
+    "test:base": "run -p lint [ jest test/util test/canvg ]",
+    "test:browser": "pnpm jest test/browser",
+    "test:node": "pnpm jest test/node",
+    "test:offscreen": "pnpm jest test/offscreen",
+    "test": "pnpm test:base",
+    "build:demo": "./scripts/buildDemo.sh",
+    "start": "NODE_ENV=development rollup -c --watch & node --loader ts-node/esm test/common/server.ts",
+    "start:node": "ts-node -P ./tsconfig.dev.json test/node/index.ts",
+    "commit": "cz",
+    "bumpVersion": "standard-version",
+    "createGithubRelease": "simple-github-release",
+    "release": "run bumpVersion [ git push origin master --tags ] createGithubRelease",
+    "updateGitHooks": "simple-git-hooks"
+  },
+  "dependencies": {
+    "@types/offscreencanvas": "^2019.6.4",
+    "@types/raf": "^3.4.0",
+    "raf": "^3.4.1",
+    "rgbcolor": "^1.0.1",
+    "stackblur-canvas": "^2.0.0",
+    "svg-pathdata": "^6.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@commitlint/cz-commitlint": "^16.1.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.5",
+    "@rollup/plugin-replace": "^4.0.0",
+    "@size-limit/preset-small-lib": "^7.0.8",
+    "@swc/core": "^1.2.136",
+    "@swc/helpers": "^0.3.2",
+    "@swc/jest": "^0.2.17",
+    "@trigen/babel-preset": "^8.0.0-alpha.5",
+    "@trigen/browserslist-config": "^8.0.0-alpha.2",
+    "@trigen/eslint-config": "^8.0.0-alpha.14",
+    "@trigen/scripts": "^8.0.0-alpha.9",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^17.0.16",
+    "@types/node-fetch": "^2.5.12",
+    "@types/puppeteer": "^5.4.2",
+    "@types/xmldom": "^0.1.29",
+    "browserslist": "^4.19.1",
+    "canvas": "^2.1.0",
+    "clean-publish": "^4.0.0",
+    "commitizen": "^4.2.4",
+    "cross-env": "^7.0.0",
+    "del-cli": "^4.0.1",
+    "eslint": "^8.0.0",
+    "http-server": "^14.0.0",
+    "jest": "^27.2.5",
+    "jest-circus": "^27.2.5",
+    "jest-image-snapshot": "^4.3.0",
+    "nano-staged": "^0.8.0",
+    "node-fetch": "^2.6.0",
+    "puppeteer": "^13.0.0",
+    "rollup": "^2.67.1",
+    "rollup-plugin-swc": "^0.2.1",
+    "simple-git-hooks": "^2.7.0",
+    "simple-github-release": "^1.0.0",
+    "size-limit": "^7.0.8",
+    "standard-version": "^9.3.2",
+    "ts-node": "^10.5.0",
+    "tsconfig-paths": "^3.8.0",
+    "typescript": "^4.5.5",
+    "xmldom": "^0.6.0"
+  },
+  "readme": ""
+}

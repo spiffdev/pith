@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "@trigen/eslint-config",
+    "@trigen/eslint-config/typescript",
+    "@trigen/eslint-config/typescript-requiring-type-checking",
+    "@trigen/eslint-config/jest"
+  ],
+  "env": {
+    "node": true
+  },
+  "parserOptions": {
+    "tsconfigRootDir": "./",
+    "project": ["./tsconfig.json", "./test/tsconfig.json"]
+  },
+  "rules": {
+    "prefer-destructuring": "off",
+    "no-magic-numbers": "off",
+    "max-params": "off",
+    "@typescript-eslint/no-magic-numbers": "off"
+  }
+}
