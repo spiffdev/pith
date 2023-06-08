@@ -61,7 +61,6 @@
     "test:node": "pnpm jest test/node",
     "test:offscreen": "pnpm jest test/offscreen",
     "test": "pnpm test:base",
-    "build:demo": "./scripts/buildDemo.sh",
     "start": "NODE_ENV=development rollup -c --watch & node --loader ts-node/esm test/common/server.ts",
     "start:node": "ts-node -P ./tsconfig.dev.json test/node/index.ts",
     "commit": "cz",
