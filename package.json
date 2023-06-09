@@ -38,11 +38,20 @@
     "module": "./dist/index.cjs",
     "types": "./dist/index.d.ts",
     "exports": {
-      "./*": "./dist/",
+      ".": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      },
       "require": "./dist/index.cjs",
       "import": "./dist/index.js"
     },
     "directory": "package"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.cjs"
+    }
   },
   "files": [
     "dist"
