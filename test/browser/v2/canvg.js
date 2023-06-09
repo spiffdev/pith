@@ -2054,9 +2054,9 @@
         var attributeName = this.attribute('attributeName').value;
 
         if (attributeType == 'CSS') {
-          return this.parent.style(attributeName, true);
+          return this.parent?.style(attributeName, true);
         }
-        return this.parent.attribute(attributeName, true);
+        return this.parent?.attribute(attributeName, true);
       };
 
       this.initialValue = null;
@@ -2083,11 +2083,11 @@
             this.duration = 0.0;
           } else if (this.attribute('fill').valueOrDefault('remove') == 'freeze' && !this.frozen) {
             this.frozen = true;
-            this.parent.animationFrozen = true;
-            this.parent.animationFrozenValue = this.getProperty().value;
+            this.parent?.animationFrozen = true;
+            this.parent?.animationFrozenValue = this.getProperty().value;
           } else if (this.attribute('fill').valueOrDefault('remove') == 'remove' && !this.removed) {
             this.removed = true;
-            this.getProperty().value = this.parent.animationFrozen ? this.parent.animationFrozenValue : this.initialValue;
+            this.getProperty().value = this.parent?.animationFrozen ? this.parent?.animationFrozenValue : this.initialValue;
             return true;
           }
           return false;
@@ -2404,14 +2404,14 @@
       };
 
       this.renderChildren = function (ctx) {
-        var customFont = this.parent.style('font-family').getDefinition();
+        var customFont = this.parent?.style('font-family').getDefinition();
         if (customFont != null) {
-          var fontSize = this.parent.style('font-size').numValueOrDefault(svg.Font.Parse(svg.ctx.font).fontSize);
-          var fontStyle = this.parent.style('font-style').valueOrDefault(svg.Font.Parse(svg.ctx.font).fontStyle);
+          var fontSize = this.parent?.style('font-size').numValueOrDefault(svg.Font.Parse(svg.ctx.font).fontSize);
+          var fontStyle = this.parent?.style('font-style').valueOrDefault(svg.Font.Parse(svg.ctx.font).fontStyle);
           var text = this.getText();
           if (customFont.isRTL) text = text.split('').reverse().join('');
 
-          var dx = svg.ToNumberArray(this.parent.attribute('dx').value);
+          var dx = svg.ToNumberArray(this.parent?.attribute('dx').value);
           for (var i = 0; i < text.length; i++) {
             var glyph = this.getGlyph(customFont, text, i);
             var scale = fontSize / customFont.fontFace.unitsPerEm;
@@ -2455,13 +2455,13 @@
       };
 
       this.measureText = function (ctx) {
-        var customFont = this.parent.style('font-family').getDefinition();
+        var customFont = this.parent?.style('font-family').getDefinition();
         if (customFont != null) {
-          var fontSize = this.parent.style('font-size').numValueOrDefault(svg.Font.Parse(svg.ctx.font).fontSize);
+          var fontSize = this.parent?.style('font-size').numValueOrDefault(svg.Font.Parse(svg.ctx.font).fontSize);
           var measure = 0;
           var text = this.getText();
           if (customFont.isRTL) text = text.split('').reverse().join('');
-          var dx = svg.ToNumberArray(this.parent.attribute('dx').value);
+          var dx = svg.ToNumberArray(this.parent?.attribute('dx').value);
           for (var i = 0; i < text.length; i++) {
             var glyph = this.getGlyph(customFont, text, i);
             measure += (glyph.horizAdvX || customFont.horizAdvX) * fontSize / customFont.fontFace.unitsPerEm;
@@ -2483,7 +2483,7 @@
       };
 
       this.getBoundingBox = function (ctx) {
-        var fontSize = this.parent.style('font-size').numValueOrDefault(svg.Font.Parse(svg.ctx.font).fontSize);
+        var fontSize = this.parent?.style('font-size').numValueOrDefault(svg.Font.Parse(svg.ctx.font).fontSize);
         return new svg.BoundingBox(this.x, this.y - fontSize, this.x + this.measureText(ctx), this.y);
       };
     };
@@ -2571,7 +2571,7 @@
         this.setTextData(ctx);
 
         ctx.save();
-        var textDecoration = this.parent.style('text-decoration').value;
+        var textDecoration = this.parent?.style('text-decoration').value;
         var fontSize = this.fontSize();
         var glyphInfo = this.glyphInfo;
         var fill = ctx.fillStyle;
@@ -2669,17 +2669,17 @@
       };
 
       this.fontSize = function () {
-        return this.parent.style('font-size').numValueOrDefault(svg.Font.Parse(svg.ctx.font).fontSize);
+        return this.parent?.style('font-size').numValueOrDefault(svg.Font.Parse(svg.ctx.font).fontSize);
       };
 
       this.measureText = function (ctx, text) {
-        var customFont = this.parent.style('font-family').getDefinition();
+        var customFont = this.parent?.style('font-family').getDefinition();
         text = text || this.getText();
         if (customFont != null) {
           var fontSize = this.fontSize();
           var measure = 0;
           if (customFont.isRTL) text = text.split("").reverse().join("");
-          var dx = svg.ToNumberArray(this.parent.attribute('dx').value);
+          var dx = svg.ToNumberArray(this.parent?.attribute('dx').value);
           for (var i = 0; i < text.length; i++) {
             var glyph = this.getGlyph(customFont, text, i);
             measure += (glyph.horizAdvX || customFont.horizAdvX) * fontSize / customFont.fontFace.unitsPerEm;
@@ -2709,12 +2709,12 @@
         var that = this;
         var charArr = this.getText().split('');
         var spacesNumber = this.getText().split(' ').length - 1;
-        var dx = svg.ToNumberArray(this.parent.attribute('dx').valueOrDefault('0'));
+        var dx = svg.ToNumberArray(this.parent?.attribute('dx').valueOrDefault('0'));
         var letterSpacing = 0;
-        var anchor = this.parent.style('text-anchor').valueOrDefault('start');
+        var anchor = this.parent?.style('text-anchor').valueOrDefault('start');
 
         var thisSpacing = this.style('letter-spacing');
-        var parentSpacing = this.parent.style('letter-spacing');
+        var parentSpacing = this.parent?.style('letter-spacing');
         if (!thisSpacing.hasValue() || thisSpacing.getValue() === 'inherit') {
           letterSpacing = parentSpacing.toPixels();
         } else if (thisSpacing.hasValue()) {

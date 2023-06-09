@@ -67,15 +67,15 @@ export abstract class Element {
       }
     }
 
-    Array.from(node.childNodes).forEach((childNode: HTMLElement) => {
+    Array.from(node.childNodes).forEach((childNode: ChildNode) => {
       if (childNode.nodeType === 1) {
-        this.addChild(childNode) // ELEMENT_NODE
+        this.addChild(childNode as unknown as HTMLElement) // ELEMENT_NODE
       } else
       if (captureTextNodes && (
         childNode.nodeType === 3
         || childNode.nodeType === 4
       )) {
-        const textNode = document.createTextNode(childNode)
+        const textNode = document.createTextNode(childNode as unknown as HTMLElement)
 
         if (textNode.getText().length > 0) {
           this.addChild(textNode) // TEXT_NODE
@@ -231,6 +231,10 @@ export abstract class Element {
 
   protected matchesSelector(selector: string) {
     const { node } = this
+
+    if (!node) {
+      return false
+    }
 
     if (typeof node.matches === 'function') {
       return node.matches(selector)

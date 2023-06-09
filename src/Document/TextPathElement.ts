@@ -175,7 +175,7 @@ export class TextPathElement extends TextElement {
     this.setTextData(ctx)
     ctx.save()
 
-    const textDecoration = this.parent.getStyle('text-decoration').getString()
+    const textDecoration = this.parent?.getStyle('text-decoration').getString()
     const fontSize = this.getFontSize()
     const { glyphInfo } = this
     const fill = ctx.fillStyle
@@ -334,11 +334,11 @@ export class TextPathElement extends TextElement {
     const renderText = this.getText()
     const chars = renderText.split('')
     const spacesNumber = renderText.split(' ').length - 1
-    const dx = this.parent.getAttribute('dx').split().map(_ => _.getPixels('x'))
-    const dy = this.parent.getAttribute('dy').getPixels('y')
+    const dx = this.parent?.getAttribute('dx').split().map(_ => _.getPixels('x'))
+    const dy = this.parent?.getAttribute('dy').getPixels('y')
     const anchor = this.getAttribute('text-anchor').getString('start')
     const thisSpacing = this.getStyle('letter-spacing')
-    const parentSpacing = this.parent.getStyle('letter-spacing')
+    const parentSpacing = this.parent?.getStyle('letter-spacing')
     let letterSpacing = 0
 
     if (!thisSpacing.hasValue()

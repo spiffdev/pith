@@ -45,7 +45,7 @@ export abstract class GradientElement extends Element {
     parentOpacityProp: Property
   ) {
     // eslint-disable-next-line @typescript-eslint/no-this-alias, consistent-this
-    let stopsContainer = this
+    let stopsContainer: GradientElement = this
 
     if (this.getHrefAttribute().hasValue()) {
       stopsContainer = this.getHrefAttribute().getDefinition()
@@ -140,6 +140,7 @@ export abstract class GradientElement extends Element {
       patternCtx.fillStyle = gradient
       patternSvg.render(patternCtx)
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return patternCtx.createPattern(patternCanvas as CanvasImageSource, 'no-repeat')
     }
 

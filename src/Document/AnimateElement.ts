@@ -14,7 +14,7 @@ export class AnimateElement extends Element {
   protected readonly maxDuration: number
   protected readonly from: Property
   protected readonly to: Property
-  protected readonly values: Property<string[]>
+  protected readonly values: Property<string[] | null>
   protected duration = 0
   protected initialValue: string | undefined
   protected initialUnits = ''
@@ -48,10 +48,10 @@ export class AnimateElement extends Element {
     const attributeName = this.getAttribute('attributeName').getString()
 
     if (attributeType === 'CSS') {
-      return this.parent.getStyle(attributeName, true)
+      return this.parent?.getStyle(attributeName, true)
     }
 
-    return this.parent.getAttribute(attributeName, true)
+    return this.parent?.getAttribute(attributeName, true)
   }
 
   calcValue() {

@@ -56,8 +56,8 @@ export class FilterElement extends Element {
     element.render(tmpCtx)
 
     // apply filters
-    children.forEach((child: FeGaussianBlurElement) => {
-      if (typeof child.apply === 'function') {
+    children.forEach((child: Element) => {
+      if (child instanceof FeGaussianBlurElement && typeof child.apply === 'function') {
         child.apply(
           tmpCtx,
           0,

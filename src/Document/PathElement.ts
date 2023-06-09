@@ -90,7 +90,7 @@ export class PathElement extends RenderedElement {
     return this.path()
   }
 
-  getMarkers(): Marker[] {
+  getMarkers(): Marker[] | null {
     const { pathParser } = this
     const points = pathParser.getMarkerPoints()
     const angles = pathParser.getMarkerAngles()
@@ -493,6 +493,11 @@ export class PathElement extends RenderedElement {
       current,
       command
     } = pathParser
+
+    if (!command) {
+      return null
+    }
+
     let {
       rX,
       rY,

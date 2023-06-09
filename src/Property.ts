@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/prefer-ts-expect-error */
+
 import RGBColor from 'rgbcolor'
 import {
   compressSpaces,
@@ -111,12 +113,12 @@ export class Property<T = unknown> {
         return 0
       }
 
-      // @ts-expect-error Parse unknown value.
+      // @ts-ignore Parse unknown value.
       return parseFloat(def)
     }
 
     const { value } = this
-    // @ts-expect-error Parse unknown value.
+    // @ts-ignore Parse unknown value.
     let n = parseFloat(value)
 
     if (this.isString(/%$/)) {
@@ -299,6 +301,7 @@ export class Property<T = unknown> {
 
     // gradient
     if (typeof def.createGradient === 'function' && 'getBoundingBox' in element) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return def.createGradient(
         this.document.ctx,
         element,
