@@ -35,7 +35,7 @@
   "main": "./src/index.ts",
   "publishConfig": {
     "main": "./dist/index.cjs",
-    "module": "./dist/index.js",
+    "module": "./dist/index.cjs",
     "types": "./dist/index.d.ts",
     "exports": {
       "require": "./dist/index.cjs",
