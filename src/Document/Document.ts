@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { Canvg } from '../Canvg'
+import { Pith } from '../Pith'
 import { IScreenViewBoxConfig, Screen } from '../Screen'
 import { Property } from '../Property'
 import { SVGFontLoader } from '../SVGFontLoader'
@@ -100,7 +100,7 @@ export class Document {
   private uniqueId = 0
 
   constructor(
-    readonly canvg: Canvg,
+    readonly pith: Pith,
     {
       rootEmSize = DEFAULT_EM_SIZE,
       emSize = DEFAULT_EM_SIZE,
@@ -109,7 +109,7 @@ export class Document {
       anonymousCrossOrigin
     }: IDocumentOptions = {}
   ) {
-    this.screen = canvg.screen
+    this.screen = pith.screen
     this.rootEmSize = rootEmSize
     this.emSize = emSize
     this.createCanvas = createCanvas
@@ -163,7 +163,7 @@ export class Document {
   }
 
   getUniqueId() {
-    return `canvg${++this.uniqueId}`
+    return `pith${++this.uniqueId}`
   }
 
   isImagesLoaded() {

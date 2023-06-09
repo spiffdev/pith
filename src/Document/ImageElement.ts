@@ -95,7 +95,7 @@ export class ImageElement extends RenderedElement {
     ctx.translate(x, y)
 
     if (typeof image === 'string') {
-      const subDocument = document.canvg.forkString(
+      const subDocument = document.pith.forkString(
         ctx,
         image,
         {

@@ -1,13 +1,13 @@
 /* eslint-env browser */
 /* eslint-disable no-magic-numbers, import/unambiguous, no-console */
-/* global canvg, canvgv2 */
+/* global pith, pithv2 */
 
 const {
-  Canvg,
+  Pith,
   Document,
   Parser,
   presets
-} = canvg
+} = pith
 let DEFAULT_WIDTH = 500
 let DEFAULT_HEIGHT = 500
 const search = new URLSearchParams(location.search)
@@ -95,7 +95,7 @@ async function render(svg, width, height) {
     height || DEFAULT_HEIGHT
   )
   const ctx = c.getContext('2d')
-  const v = await Canvg.from(ctx, svg)
+  const v = await Pith.from(ctx, svg)
 
   if (custom.resize.checked) {
     v.resize(width, height, custom.preserveAspectRatio.value)
@@ -120,7 +120,7 @@ async function offscreenRender(svg, width, height) {
     height || DEFAULT_HEIGHT
   )
   const ctx = c.getContext('2d')
-  const v = await Canvg.from(ctx, svg, presets.offscreen())
+  const v = await Pith.from(ctx, svg, presets.offscreen())
 
   if (custom.resize.checked) {
     v.resize(width, height, custom.preserveAspectRatio.value)
@@ -146,7 +146,7 @@ function v2Render(svg, width, height) {
   canvasOutput.innerHTML = ''
   canvasOutput.appendChild(c)
 
-  canvgv2(c, svg, {
+  pithv2(c, svg, {
     ignoreAnimation: freeze,
     ignoreMouse: freeze,
     renderCallback() {
@@ -185,7 +185,7 @@ async function renderSource(svg) {
   }
 }
 
-function resizeSvg(canvgDocumentElement) {
+function resizeSvg(pithDocumentElement) {
   const svg = svgOutput.firstElementChild
   const attributes = [
     'width',
@@ -196,7 +196,7 @@ function resizeSvg(canvgDocumentElement) {
   ]
 
   attributes.forEach((name) => {
-    const attr = canvgDocumentElement.getAttribute(name)
+    const attr = pithDocumentElement.getAttribute(name)
 
     if (attr.hasValue()) {
       svg.setAttribute(name, attr.getValue())

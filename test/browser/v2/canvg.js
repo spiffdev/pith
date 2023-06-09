@@ -1,17 +1,17 @@
 /* eslint-disable */
 /*
- * canvg.js - Javascript SVG parser and renderer on Canvas
+ * pith.js - Javascript SVG parser and renderer on Canvas
  * version 2.0.0
  * MIT Licensed
  * Gabe Lerner (gabelerner@gmail.com)
- * https://github.com/canvg/canvg
+ * https://github.com/pith/pith
  *
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('rgbcolor'), require('stackblur-canvas')) :
   typeof define === 'function' && define.amd ? define(['rgbcolor', 'stackblur-canvas'], factory) :
-  (global.canvgv2 = factory(global.RGBColor,global.StackBlur));
+  (global.pithv2 = factory(global.RGBColor,global.StackBlur));
 }(this, (function (rgbcolor,stackblurCanvas) { 'use strict';
 
   rgbcolor = rgbcolor && rgbcolor.hasOwnProperty('default') ? rgbcolor['default'] : rgbcolor;
@@ -21,7 +21,7 @@
     return module = { exports: {} }, fn(module, module.exports), module.exports;
   }
 
-  var canvg_1 = createCommonjsModule(function (module) {
+  var pith_1 = createCommonjsModule(function (module) {
   /* eslint-env browser, node */
   /* globals $, Sizzle, Windows, ActiveXObject */
   /* eslint-disable no-redeclare */
@@ -50,7 +50,7 @@
     return c;
   }
 
-  // canvg(target, s)
+  // pith(target, s)
   // empty parameters: replace all 'svg' elements on page with 'canvas' elements
   // target: canvas element or the id of a canvas element
   // s: svg string, url to svg file, or xml document
@@ -66,7 +66,7 @@
   //       renderCallback: function => will call the function after the first render is completed
   //       enableRedraw: function => whether enable the redraw interval in node environment
   //       forceRedraw: function => will call the function on every frame, if it returns true, will redraw
-  var canvg = function (target, s, opts) {
+  var pith = function (target, s, opts) {
     // no parameters
     if (target == null && s == null && opts == null) {
       var svgTags = doc.querySelectorAll('svg');
@@ -85,7 +85,7 @@
         svgTag.parentNode.removeChild(svgTag);
         var div = doc.createElement('div');
         div.appendChild(svgTag);
-        canvg(c, div.innerHTML);
+        pith(c, div.innerHTML);
       }
       return;
     }
@@ -208,7 +208,7 @@
     // globals
     svg.init = function (ctx) {
       var uniqueId = 0;
-      svg.UniqueId = function () { uniqueId++; return 'canvg' + uniqueId; };
+      svg.UniqueId = function () { uniqueId++; return 'pith' + uniqueId; };
       svg.Definitions = {};
       svg.Styles = {};
       svg.StylesSpecificity = {};
@@ -4078,16 +4078,16 @@
           cOpts[prop] = opts[prop];
         }
       }
-      canvg(this.canvas, s, cOpts);
+      pith(this.canvas, s, cOpts);
     };
   }
 
   // for tests
-  canvg._build = build;
+  pith._build = build;
 
-  module.exports = canvg;
+  module.exports = pith;
   });
 
-  return canvg_1;
+  return pith_1;
 
 })));

@@ -52,7 +52,7 @@ async function render(page: Page, file: string) {
 
 jest.setTimeout(30000)
 
-describe('canvg', () => {
+describe('pith', () => {
   describe('browser', () => {
     describe('offscreen', () => {
       if (process.platform !== 'linux') {

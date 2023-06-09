@@ -12,7 +12,7 @@
 /* eslint-disable no-magic-numbers, import/unambiguous, no-console */
 
 import {
-  Canvg,
+  Pith,
   Document,
   Parser,
   presets
@@ -100,7 +100,7 @@ async function render(svg, width, height) {
     height || DEFAULT_HEIGHT
   )
   const ctx = c.getContext('2d')
-  const v = await Canvg.from(ctx, svg)
+  const v = await Pith.from(ctx, svg)
 
   if (custom.resize.checked) {
     v.resize(width, height, custom.preserveAspectRatio.value)
@@ -125,7 +125,7 @@ async function offscreenRender(svg, width, height) {
     height || DEFAULT_HEIGHT
   )
   const ctx = c.getContext('2d')
-  const v = await Canvg.from(ctx, svg, presets.offscreen())
+  const v = await Pith.from(ctx, svg, presets.offscreen())
 
   if (custom.resize.checked) {
     v.resize(width, height, custom.preserveAspectRatio.value)
@@ -171,7 +171,7 @@ async function renderSource(svg) {
   }
 }
 
-function resizeSvg(canvgDocumentElement) {
+function resizeSvg(pithDocumentElement) {
   const svg = svgOutput.firstElementChild
   const attributes = [
     'width',
@@ -182,7 +182,7 @@ function resizeSvg(canvgDocumentElement) {
   ]
 
   attributes.forEach((name) => {
-    const attr = canvgDocumentElement.getAttribute(name)
+    const attr = pithDocumentElement.getAttribute(name)
 
     if (attr.hasValue()) {
       svg.setAttribute(name, attr.getValue())

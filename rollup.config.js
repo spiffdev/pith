@@ -69,7 +69,7 @@ export default process.env.NODE_ENV !== 'development' ? [
     file: './dist/umd.js',
     format: 'umd',
     exports: 'named',
-    name: 'canvg',
+    name: 'pith',
     sourcemap: true
   }
 }

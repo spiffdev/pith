@@ -21,13 +21,13 @@ export interface IOptions extends IParserOptions,
 /**
  * SVG renderer on canvas.
  */
-export class Canvg {
+export class Pith {
   /**
-   * Create Canvg instance from SVG source string or URL.
+   * Create Pith instance from SVG source string or URL.
    * @param ctx - Rendering context.
    * @param svg - SVG source string or URL.
    * @param options - Rendering options.
-   * @returns Canvg instance.
+   * @returns Pith instance.
    */
   static async from(
     ctx: RenderingContext2D,
@@ -37,15 +37,15 @@ export class Canvg {
     const parser = new Parser(options)
     const svgDocument = await parser.parse(svg)
 
-    return new Canvg(ctx, svgDocument, options)
+    return new Pith(ctx, svgDocument, options)
   }
 
   /**
-   * Create Canvg instance from SVG source string.
+   * Create Pith instance from SVG source string.
    * @param ctx - Rendering context.
    * @param svg - SVG source string.
    * @param options - Rendering options.
-   * @returns Canvg instance.
+   * @returns Pith instance.
    */
   static fromString(
     ctx: RenderingContext2D,
@@ -55,7 +55,7 @@ export class Canvg {
     const parser = new Parser(options)
     const svgDocument = parser.parseFromString(svg)
 
-    return new Canvg(ctx, svgDocument, options)
+    return new Pith(ctx, svgDocument, options)
   }
 
   /**
@@ -67,7 +67,7 @@ export class Canvg {
    */
   readonly screen: Screen
   /**
-   * Canvg Document.
+   * Pith Document.
    */
   readonly document: Document
   private readonly documentElement: SVGElement
@@ -96,36 +96,36 @@ export class Canvg {
   }
 
   /**
-   * Create new Canvg instance with inherited options.
+   * Create new Pith instance with inherited options.
    * @param ctx - Rendering context.
    * @param svg - SVG source string or URL.
    * @param options - Rendering options.
-   * @returns Canvg instance.
+   * @returns Pith instance.
    */
   fork(
     ctx: RenderingContext2D,
     svg: string,
     options: IOptions = {}
   ) {
-    return Canvg.from(ctx, svg, {
+    return Pith.from(ctx, svg, {
       ...this.options,
       ...options
     })
   }
 
   /**
-   * Create new Canvg instance with inherited options.
+   * Create new Pith instance with inherited options.
    * @param ctx - Rendering context.
    * @param svg - SVG source string.
    * @param options - Rendering options.
-   * @returns Canvg instance.
+   * @returns Pith instance.
    */
   forkString(
     ctx: RenderingContext2D,
     svg: string,
     options: IOptions = {}
   ) {
-    return Canvg.fromString(ctx, svg, {
+    return Pith.fromString(ctx, svg, {
       ...this.options,
       ...options
     })

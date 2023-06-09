@@ -12,7 +12,7 @@ export class SVGFontLoader {
   async load(fontFamily: string, url: string) {
     try {
       const { document } = this
-      const svgDocument = await document.canvg.parser.load(url)
+      const svgDocument = await document.pith.parser.load(url)
       const fonts = svgDocument.getElementsByTagName('font')
 
       Array.from(fonts).forEach((fontNode) => {

@@ -40,7 +40,7 @@ async function render(page: Page, file: string) {
 
 jest.setTimeout(30000)
 
-describe('canvg', () => {
+describe('pith', () => {
   describe('browser', () => {
     if (process.platform !== 'linux') {
       it('should run screenshots testing only on CI (linux)', () => {})

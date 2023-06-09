@@ -32,7 +32,7 @@ jobs:
       - name: Make CNAME file
         run: |
           cd ./website/build
-          echo "canvg.js.org" > CNAME
+          echo "pith.js.org" > CNAME
       - name: Prepare build
         run: |
           cd ./website/build

@@ -6,7 +6,7 @@ import {
 import { render } from './node'
 import svgs from './svgs.json'
 
-describe('canvg', () => {
+describe('pith', () => {
   describe('node', () => {
     if (process.platform !== 'linux') {
       it('should run screenshots testing only on CI (linux)', () => {})

@@ -32,8 +32,8 @@ body:
 
   - type: input
     attributes:
-      label: Canvg version
-      description: Which version of Canvg are you using?
+      label: Pith version
+      description: Which version of Pith are you using?
       placeholder: v0.0.0
     validations:
       required: true

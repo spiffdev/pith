@@ -2,7 +2,7 @@ import * as presets from './presets'
 
 export * from './types'
 export * from './util'
-export * from './Canvg'
+export * from './Pith'
 export * from './Parser'
 export * from './Screen'
 export * from './Document'

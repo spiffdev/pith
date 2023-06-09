@@ -7,7 +7,7 @@ import {
 import { DOMParser } from 'xmldom'
 import * as canvas from 'canvas'
 import fetch, { Response } from 'node-fetch'
-import { Canvg, presets } from '../../src'
+import { Pith, presets } from '../../src'
 
 const preset = presets.node({
   DOMParser,
@@ -38,7 +38,7 @@ export async function render(
   )
   const c = preset.createCanvas(1280, 720) as canvas.Canvas
   const ctx = c.getContext('2d')
-  const v = Canvg.fromString(ctx, svg, preset)
+  const v = Pith.fromString(ctx, svg, preset)
 
   if (width && height && preserveAspectRatio) {
     v.resize(width, height, preserveAspectRatio)

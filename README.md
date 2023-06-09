@@ -1,4 +1,4 @@
-# canvg
+# pith
 
 <img align="right" width="120" height="120" alt="Logo" src="website/static/img/logo.svg">
 
@@ -7,17 +7,17 @@
 [![Build status][build]][build-url]
 [![Coverage status][coverage]][coverage-url]
 
-[npm]: https://img.shields.io/npm/v/canvg.svg
-[npm-url]: https://npmjs.com/package/canvg
+[npm]: https://img.shields.io/npm/v/pith.svg
+[npm-url]: https://npmjs.com/package/pith
 
-[deps]: https://img.shields.io/librariesio/release/npm/canvg
-[deps-url]: https://libraries.io/npm/canvg/tree
+[deps]: https://img.shields.io/librariesio/release/npm/pith
+[deps-url]: https://libraries.io/npm/pith/tree
 
-[build]: https://img.shields.io/github/actions/workflow/status/canvg/canvg/ci.yml?branch=master
-[build-url]: https://github.com/canvg/canvg/actions
+[build]: https://img.shields.io/github/actions/workflow/status/pith/pith/ci.yml?branch=master
+[build-url]: https://github.com/pith/pith/actions
 
-[coverage]: https://img.shields.io/codecov/c/github/canvg/canvg.svg
-[coverage-url]: https://app.codecov.io/gh/canvg/canvg
+[coverage]: https://img.shields.io/codecov/c/github/pith/pith.svg
+[coverage-url]: https://app.codecov.io/gh/pith/pith
 
 JavaScript SVG parser and renderer on Canvas. It takes the URL to the SVG file or the text of the SVG file, parses it in JavaScript and renders the result on Canvas. It also can be used to rasterize SVG images.
 
@@ -25,7 +25,7 @@ JavaScript SVG parser and renderer on Canvas. It takes the URL to the SVG file o
 <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
 <a href="#docs">Docs</a>
 <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-<a href="https://canvg.js.org/demo/">Demo</a>
+<a href="https://pith.js.org/demo/">Demo</a>
 <br />
 <hr />
 
@@ -34,17 +34,17 @@ JavaScript SVG parser and renderer on Canvas. It takes the URL to the SVG file o
 Install this library using your favorite package manager:
 
 ```sh
-pnpm add canvg
+pnpm add pith
 # or
-yarn add canvg
+yarn add pith
 # or
-npm i canvg
+npm i pith
 ```
 
-Then, just import `Canvg` and use it:
+Then, just import `Pith` and use it:
 
 ```js
-import { Canvg } from 'canvg';
+import { Pith } from 'pith';
 
 let v = null;
 
@@ -52,7 +52,7 @@ window.onload = async () => {
   const canvas = document.querySelector('canvas');
   const ctx = canvas.getContext('2d');
 
-  v = await Canvg.from(ctx, './svgs/1.svg');
+  v = await Pith.from(ctx, './svgs/1.svg');
 
   // Start SVG rendering with animations and mouse handling.
   v.start();
@@ -63,15 +63,15 @@ window.onbeforeunload = () => {
 };
 ```
 
-[Description of all exports you can find in Documentation.](https://canvg.js.org/api)
+[Description of all exports you can find in Documentation.](https://pith.js.org/api)
 
 <br />
 
 ## Docs
 
-- [Migration to v4](https://canvg.js.org/docs/migration-to-v4)
-- [API](https://canvg.js.org/api/classes/Canvg)
-- [Examples](https://canvg.js.org/examples)
+- [Migration to v4](https://pith.js.org/docs/migration-to-v4)
+- [API](https://pith.js.org/api/classes/Pith)
+- [Examples](https://pith.js.org/examples)
 
 ## What's implemented?
 

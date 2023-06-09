@@ -7,5 +7,5 @@
     <ellipse cx="110" cy="110" rx="100" ry="50" fill="red" />
   </a>
   
-  <text x="50" y="200">you can <a xlink:href="http://canvg.googlecode.com">click here</a> for my project</text>
+  <text x="50" y="200">you can <a xlink:href="http://pith.googlecode.com">click here</a> for my project</text>
 </svg>
