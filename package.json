@@ -38,13 +38,11 @@
     "module": "./dist/index.cjs",
     "types": "./dist/index.d.ts",
     "exports": {
+      "./*": "./dist/",
       "require": "./dist/index.cjs",
       "import": "./dist/index.js"
     },
     "directory": "package"
-  },
-  "exports": {
-    "./*": "./dist/"
   },
   "files": [
     "dist"
