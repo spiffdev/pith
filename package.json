@@ -67,7 +67,9 @@
     "createGithubRelease": "simple-github-release",
     "release": "run bumpVersion [ git push origin master --tags ] createGithubRelease",
     "updateGitHooks": "simple-git-hooks",
-    "dev": "vite"
+    "dev": "vite",
+    "cleanPublish": "yarn test && clean-publish",
+    "prepare": "yarn run build"
   },
   "dependencies": {
     "@types/offscreencanvas": "^2019.6.4",
