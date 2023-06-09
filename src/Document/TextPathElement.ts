@@ -248,7 +248,7 @@ export class TextPathElement extends TextElement {
     fullPathWidth: number,
     spacesNumber: number,
     inputOffset: number,
-    dy: number,
+    dy: number | null,
     c: string,
     charI: number
   ) {
@@ -930,7 +930,7 @@ export class TextPathElement extends TextElement {
   protected getPointOnPath(distance: number) {
     const fullLen = this.getPathLength()
     let cumulativePathLength = 0
-    let p: IPoint = null
+    let p: IPoint | null = null
 
     if (distance < -0.00005
       || distance - 0.00005 > fullLen
