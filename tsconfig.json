@@ -1,55 +1,40 @@
 {
-	"compilerOptions": {
-		"declaration": true,
-		"declarationMap": true,
-		"module": "esnext",
-		"moduleResolution": "node",
-		"target": "esnext",
-		"jsx": "preserve",
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"noImplicitAny": false,
-		"baseUrl": ".",
-		"allowSyntheticDefaultImports": true,
-		"esModuleInterop": true,
-		"resolveJsonModule": true,
-		"experimentalDecorators": true,
-		"emitDecoratorMetadata": false,
-		"inlineSourceMap": true,
-    "skipLibCheck": true,
-    "outDir": "dist",
-		"lib": [
-			"esnext",
-			"dom"
-		],
-		"typeRoots": [
-			"./node_modules/@types",
-			"./types"
-		],
+  "compilerOptions": {
     /* Type Checking */
-    "strict": false, /* @todo Enable */
+    "strict": false /* @todo Enable */,
     "strictBindCallApply": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    /* Modules */
+    "baseUrl": ".",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    /* Emit */
+    "declaration": true,
+    "declarationMap": true,
+    "inlineSourceMap": true,
+    "outDir": "dist",
     /* Interop Constraints */
+    "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
-	},
-	"include": [
-    "types",
-    "src"
-  ],
-	"exclude": [
-		"dist/**/*"
-	],
+    /* Language and Environment */
+    "lib": ["esnext", "dom"],
+    "target": "esnext",
+    /* Completeness */
+    "skipLibCheck": true
+  },
+  "include": ["types", "src"],
   "ts-node": {
     "swc": true,
     "moduleTypes": {
       "test/**/*": "cjs"
     },
     "compilerOptions": {
-      "module": "commonjs",
-      "target": "esnext"
+      "module": "commonjs"
     }
   }
 }
