@@ -43,6 +43,10 @@
     },
     "directory": "package"
   },
+  "exports": {
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.js"
+  },
   "files": [
     "dist"
   ],
