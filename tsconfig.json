@@ -40,7 +40,7 @@
       "test/**/*": "cjs"
     },
     "compilerOptions": {
-      "module": "commonjs"
+      "module": "esnext"
     }
   }
 }
