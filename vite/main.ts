@@ -15,7 +15,8 @@ import {
   Pith,
   Document,
   Parser,
-  presets
+  presets,
+  RenderingContext2D
 } from '../src'
 
 let DEFAULT_WIDTH = 500
@@ -99,7 +100,7 @@ async function render(svg, width, height) {
     width || DEFAULT_WIDTH,
     height || DEFAULT_HEIGHT
   )
-  const ctx = c.getContext('2d')
+  const ctx = c.getContext('2d') as unknown as RenderingContext2D
   const v = await Pith.from(ctx, svg)
 
   if (custom.resize.checked) {
@@ -124,7 +125,7 @@ async function offscreenRender(svg, width, height) {
     width || DEFAULT_WIDTH,
     height || DEFAULT_HEIGHT
   )
-  const ctx = c.getContext('2d')
+  const ctx = c.getContext('2d') as unknown as RenderingContext2D
   const v = await Pith.from(ctx, svg, presets.offscreen())
 
   if (custom.resize.checked) {

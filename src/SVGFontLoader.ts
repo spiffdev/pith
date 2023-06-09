@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { Document } from './Document'
 
 export class SVGFontLoader {
@@ -16,7 +19,7 @@ export class SVGFontLoader {
       const fonts = svgDocument.getElementsByTagName('font')
 
       Array.from(fonts).forEach((fontNode) => {
-        const font = document.createElement(fontNode)
+        const font = document.createElement(fontNode as HTMLElement)
 
         document.definitions[fontFamily] = font
       })

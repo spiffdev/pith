@@ -39,7 +39,7 @@ export class MaskElement extends Element {
 
     const ignoredStyles = this.removeStyles(element, MaskElement.ignoreStyles)
     const maskCanvas = document.createCanvas(x + width, y + height)
-    const maskCtx = maskCanvas.getContext('2d')
+    const maskCtx = maskCanvas.getContext('2d') as unknown as RenderingContext2D
 
     document.screen.setDefaults(maskCtx)
     this.renderChildren(maskCtx)
@@ -65,7 +65,7 @@ export class MaskElement extends Element {
     ).apply(maskCtx, 0, 0, x + width, y + height)
 
     const tmpCanvas = document.createCanvas(x + width, y + height)
-    const tmpCtx = tmpCanvas.getContext('2d')
+    const tmpCtx = tmpCanvas.getContext('2d') as unknown as RenderingContext2D
 
     document.screen.setDefaults(tmpCtx)
     element.render(tmpCtx)

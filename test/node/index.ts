@@ -37,7 +37,7 @@ export async function render(
     'utf8'
   )
   const c = preset.createCanvas(1280, 720) as canvas.Canvas
-  const ctx = c.getContext('2d')
+  const ctx = c.getContext('2d') as unknown as RenderingContext2D
   const v = Pith.fromString(ctx, svg, preset)
 
   if (width && height && preserveAspectRatio) {
