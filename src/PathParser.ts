@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   SVGCommand,
   CommandM,
@@ -79,8 +81,8 @@ export class PathParser extends SVGPathData {
 
   getPoint(xProp = 'x', yProp = 'y') {
     const point = new Point(
-      this.command[xProp] as number,
-      this.command[yProp] as number
+      (this.command as any)[xProp] as number,
+      (this.command as any)[yProp] as number
     )
 
     return this.makeAbsolute(point)
@@ -157,7 +159,7 @@ export class PathParser extends SVGPathData {
     this.addMarkerAngle(point, from ? from.angleTo(point) : null)
   }
 
-  addMarkerAngle(point: Point, angle: number) {
+  addMarkerAngle(point: Point, angle: number | null) {
     this.points.push(point)
     this.angles.push(angle)
   }

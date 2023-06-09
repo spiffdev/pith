@@ -27,7 +27,7 @@ export class LinearGradientElement extends GradientElement {
       ? element.getBoundingBox(ctx)
       : null
 
-    if (isBoundingBoxUnits && !boundingBox) {
+    if (isBoundingBoxUnits || !boundingBox) {
       return null
     }
 

@@ -11,7 +11,7 @@ import { Document } from './Document'
 import { RenderedElement } from './RenderedElement'
 import { MarkerElement } from './MarkerElement'
 
-export type Marker = [Point, number]
+export type Marker = [Point, number | null]
 
 export class PathElement extends RenderedElement {
   override type = 'path'

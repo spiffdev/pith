@@ -50,11 +50,11 @@ export class TextPathElement extends TextElement {
   protected textWidth = 0
   protected textHeight = 0
   protected pathLength = -1
-  protected glyphInfo: IGlyphInfo[] = null
+  protected glyphInfo: IGlyphInfo[] | null = null
   protected readonly text: string
   protected readonly dataArray: IPathCommand[]
   private letterSpacingCache: number[] = []
-  private equidistantCache: IEquidistantCache
+  private equidistantCache: IEquidistantCache | null = null
   private readonly measuresCache = new Map<string, number>([['', 0]])
 
   constructor(
@@ -64,7 +64,7 @@ export class TextPathElement extends TextElement {
   ) {
     super(document, node, captureTextNodes)
 
-    const pathElement = this.getHrefAttribute().getDefinition<PathElement>()
+    const pathElement = this.getHrefAttribute().getDefinition<PathElement>() as unknown as PathElement
 
     this.text = this.getTextFromNode()
     this.dataArray = this.parsePathData(pathElement)
@@ -286,11 +286,13 @@ export class TextPathElement extends TextElement {
 
       segment.p0 = {
         ...p0,
+        distance: p0.distance || 0,
         x: p0.x + dyX,
         y: p0.y + dyY
       }
       segment.p1 = {
         ...p1,
+        distance: p1.distance || 0,
         x: p1.x + dyX,
         y: p1.y + dyY
       }
@@ -711,8 +713,8 @@ export class TextPathElement extends TextElement {
     points: number[]
   ) {
     let len = 0
-    let p1: IPoint = null
-    let p2: IPoint = null
+    let p1: IPoint | null = null
+    let p2: IPoint | null = null
     let t = 0
 
     switch (commandType) {

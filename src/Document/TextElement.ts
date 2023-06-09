@@ -147,7 +147,7 @@ export class TextElement extends RenderedElement {
   }
 
   protected getTextFromNode(node?: ChildNode) {
-    const textNode = node || this.node
+    const textNode = (node || this.node) as unknown as ChildNode
     const childNodes = Array.from(textNode.parentNode.childNodes)
     const index = childNodes.indexOf(textNode)
     const lastIndex = childNodes.length - 1
@@ -203,7 +203,7 @@ export class TextElement extends RenderedElement {
     const renderText = this.getText()
     const customFont = parent.getStyle('font-family').getDefinition<FontElement>()
 
-    if (customFont) {
+    if (customFont?.fontFace) {
       const { unitsPerEm } = customFont.fontFace
       const ctxFont = Font.parse(document.ctx.font)
       const fontSize = parent.getStyle('font-size').getNumber(ctxFont.fontSize)

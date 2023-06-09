@@ -21,7 +21,7 @@ export class MarkerElement extends Element {
 
     ctx.translate(x, y)
 
-    if (orient === 'auto') {
+    if (orient === 'auto' && angle) {
       ctx.rotate(angle)
     }
 
@@ -85,7 +85,7 @@ export class MarkerElement extends Element {
       ctx.scale(1 / ctx.lineWidth, 1 / ctx.lineWidth)
     }
 
-    if (orient === 'auto') {
+    if (orient === 'auto' && angle) {
       ctx.rotate(-angle)
     }
 

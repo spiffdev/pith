@@ -21,7 +21,7 @@ export class PatternElement extends Element {
     // render me using a temporary svg element
     const patternSvg = new SVGElement(
       this.document,
-      null
+      undefined
     )
 
     patternSvg.attributes.viewBox = new Property(
@@ -51,7 +51,7 @@ export class PatternElement extends Element {
 
     patternCtx.imageSmoothingEnabled = true
     patternCtx.imageSmoothingQuality = 'high'
-    
+
     const xAttr = this.getAttribute('x')
     const yAttr = this.getAttribute('y')
 
