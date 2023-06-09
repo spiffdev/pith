@@ -32,7 +32,7 @@
     "node": ">=12.0.0"
   },
   "sideEffects": false,
-  "main": "./dist/index.ts",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "publishConfig": {
