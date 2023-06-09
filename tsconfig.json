@@ -25,7 +25,15 @@
 		"typeRoots": [
 			"./node_modules/@types",
 			"./types"
-		]
+		],
+    /* Type Checking */
+    "strict": false, /* @todo Enable */
+    "strictBindCallApply": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    /* Interop Constraints */
+    "isolatedModules": true,
 	},
 	"include": [
     "types",
@@ -33,5 +41,15 @@
   ],
 	"exclude": [
 		"dist/**/*"
-	]
+	],
+  "ts-node": {
+    "swc": true,
+    "moduleTypes": {
+      "test/**/*": "cjs"
+    },
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "esnext"
+    }
+  }
 }
