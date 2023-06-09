@@ -44,8 +44,7 @@
     "directory": "package"
   },
   "exports": {
-    "require": "./dist/index.cjs",
-    "import": "./dist/index.js"
+    "./*": "./dist/"
   },
   "files": [
     "dist"
