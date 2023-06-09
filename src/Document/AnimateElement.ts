@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { Property } from '../Property'
 import { Document } from './Document'
 import { Element } from './Element'
@@ -75,6 +76,10 @@ export class AnimateElement extends Element {
     const { parent } = this
     const prop = this.getProperty()
 
+    if (!prop) {
+      return false
+    }
+
     // set initial value
     if (!this.initialValue) {
       this.initialValue = prop.getString()
@@ -149,19 +154,19 @@ export class AnimateElement extends Element {
     let to: Property
 
     if (values.hasValue()) {
-      const p = progress * (values.getValue().length - 1)
+      const p = progress * (values.getValue()!.length - 1)
       const lb = Math.floor(p)
       const ub = Math.ceil(p)
       let value: string | undefined
 
-      value = values.getValue()[lb]
+      value = values.getValue()![lb]!
       from = new Property(
         document,
         'from',
         value ? parseFloat(value) : 0
       )
 
-      value = values.getValue()[ub]
+      value = values.getValue()![ub]!
       to = new Property(
         document,
         'to',

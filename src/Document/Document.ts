@@ -109,6 +109,7 @@ export class Document {
       anonymousCrossOrigin
     }: IDocumentOptions = {}
   ) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     this.screen = pith.screen
     this.rootEmSize = rootEmSize
     this.emSize = emSize

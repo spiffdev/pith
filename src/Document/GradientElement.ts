@@ -48,7 +48,7 @@ export abstract class GradientElement extends Element {
     let stopsContainer: GradientElement = this
 
     if (this.getHrefAttribute().hasValue()) {
-      stopsContainer = this.getHrefAttribute().getDefinition()
+      stopsContainer = this.getHrefAttribute().getDefinition() as unknown as GradientElement
       this.inheritStopContainer(stopsContainer)
     }
 

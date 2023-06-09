@@ -6,7 +6,7 @@ import {
 } from '../util'
 import { Point } from '../Point'
 import { BoundingBox } from '../BoundingBox'
-import { PathParser } from '../PathParser'
+import { Command, PathParser } from '../PathParser'
 import { Document } from './Document'
 import { RenderedElement } from './RenderedElement'
 import { MarkerElement } from './MarkerElement'
@@ -94,6 +94,11 @@ export class PathElement extends RenderedElement {
     const { pathParser } = this
     const points = pathParser.getMarkerPoints()
     const angles = pathParser.getMarkerAngles()
+
+    if (!points || !angles) {
+      return null
+    }
+
     const markers = points.map((point, i): Marker => [point, angles[i]])
 
     return markers
@@ -493,18 +498,13 @@ export class PathElement extends RenderedElement {
       current,
       command
     } = pathParser
-
-    if (!command) {
-      return null
-    }
-
     let {
       rX,
       rY,
       xRot,
       lArcFlag,
       sweepFlag
-    } = command
+    } = command as unknown as Command
     const xAxisRotation = xRot * (Math.PI / 180.0)
     const currentPoint = pathParser.getAsCurrentPoint()
     // Conversion from endpoint to center parameterization

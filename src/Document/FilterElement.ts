@@ -29,7 +29,11 @@ export class FilterElement extends Element {
     let px = 0
     let py = 0
 
-    children.forEach((child: FeGaussianBlurElement) => {
+    children.forEach((child: Element) => {
+      if (!(child instanceof FeGaussianBlurElement)) {
+        return
+      }
+
       const efd = child.extraFilterDistance || 0
 
       px = Math.max(px, efd)

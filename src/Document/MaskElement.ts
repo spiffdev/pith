@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { RenderingContext2D } from '../types'
 import { BoundingBox } from '../BoundingBox'
 import { Element } from './Element'
@@ -24,8 +25,10 @@ export class MaskElement extends Element {
     if (!width && !height) {
       const boundingBox = new BoundingBox()
 
-      this.children.forEach((child: PathElement) => {
-        boundingBox.addBoundingBox(child.getBoundingBox(ctx))
+      this.children.forEach((child: Element) => {
+        if (child instanceof PathElement) {
+          boundingBox.addBoundingBox(child.getBoundingBox(ctx))
+        }
       })
 
       x = Math.floor(boundingBox.x1)
