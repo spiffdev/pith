@@ -141,7 +141,9 @@ export class PathElement extends RenderedElement {
         const marker = markerStartStyleProp.getDefinition<MarkerElement>()
         const [point, angle] = markers[0]
 
-        marker?.render(ctx, point, angle ?? undefined)
+        if (marker) {
+          marker.render(ctx, point, angle ?? undefined)
+        }
       }
 
       if (markerMidStyleProp.isUrlDefinition()) {
@@ -150,7 +152,9 @@ export class PathElement extends RenderedElement {
         for (let i = 1; i < markersLastIndex; i++) {
           const [point, angle] = markers[i]
 
-          marker?.render(ctx, point, angle ?? undefined)
+          if (marker) {
+            marker.render(ctx, point, angle ?? undefined)
+          }
         }
       }
 
@@ -158,7 +162,9 @@ export class PathElement extends RenderedElement {
         const marker = markerEndStyleProp.getDefinition<MarkerElement>()
         const [point, angle] = markers[markersLastIndex]
 
-        marker?.render(ctx, point, angle ?? undefined)
+        if (marker) {
+          marker.render(ctx, point, angle ?? undefined)
+        }
       }
     }
   }
