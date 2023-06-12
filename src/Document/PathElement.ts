@@ -142,7 +142,7 @@ export class PathElement extends RenderedElement {
         const [point, angle] = markers[0]
 
         if (marker) {
-          marker.render(ctx, point, angle ?? undefined)
+          marker.render(ctx, point, angle === null ? undefined : angle)
         }
       }
 
@@ -153,7 +153,7 @@ export class PathElement extends RenderedElement {
           const [point, angle] = markers[i]
 
           if (marker) {
-            marker.render(ctx, point, angle ?? undefined)
+            marker.render(ctx, point, angle === null ? undefined : angle)
           }
         }
       }
@@ -163,7 +163,7 @@ export class PathElement extends RenderedElement {
         const [point, angle] = markers[markersLastIndex]
 
         if (marker) {
-          marker.render(ctx, point, angle ?? undefined)
+          marker.render(ctx, point, angle === null ? undefined : angle)
         }
       }
     }
