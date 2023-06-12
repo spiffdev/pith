@@ -22,8 +22,8 @@
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
     /* Language and Environment */
-    "lib": ["ES2019", "dom"],
-    "target": "ES2019",
+    "lib": ["ES2018", "dom"],
+    "target": "ES2018",
     /* Completeness */
     "skipLibCheck": true
   },
