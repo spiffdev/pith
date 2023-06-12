@@ -10,7 +10,7 @@
     "noUnusedParameters": true,
     /* Modules */
     "baseUrl": ".",
-    "module": "es2022",
+    "module": "ES6",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     /* Emit */
@@ -22,8 +22,8 @@
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
     /* Language and Environment */
-    "lib": ["es2022", "dom"],
-    "target": "es2022",
+    "lib": ["ES2019", "dom"],
+    "target": "ES2019",
     /* Completeness */
     "skipLibCheck": true
   },
