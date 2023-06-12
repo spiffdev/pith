@@ -10,7 +10,7 @@
     "noUnusedParameters": true,
     /* Modules */
     "baseUrl": ".",
-    "module": "esnext",
+    "module": "es2022",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     /* Emit */
@@ -22,8 +22,8 @@
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
     /* Language and Environment */
-    "lib": ["esnext", "dom"],
-    "target": "esnext",
+    "lib": ["es2022", "dom"],
+    "target": "es2022",
     /* Completeness */
     "skipLibCheck": true
   },
