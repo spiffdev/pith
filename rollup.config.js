@@ -29,7 +29,7 @@ const plugins = targets => [
       parser: {
         syntax: 'typescript'
       },
-      externalHelpers: true
+      externalHelpers: false
     },
     env: {
       targets
