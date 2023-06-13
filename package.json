@@ -75,7 +75,7 @@
     "updateGitHooks": "simple-git-hooks",
     "dev": "vite",
     "cleanPublish": "yarn test && clean-publish",
-    "prepare": "yarn install && yarn run build"
+    "prepare": "yarn run build"
   },
   "dependencies": {
     "@types/offscreencanvas": "^2019.6.4",
