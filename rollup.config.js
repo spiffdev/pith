@@ -9,7 +9,8 @@ import node from '@trigen/browserslist-config/node'
 import pkg from './package.json'
 
 const extensions = ['.js', '.ts']
-const external = _ => /node_modules/.test(_) && !/@swc\/helpers/.test(_)
+// const external = importVal => /node_modules/.test(importVal) && !/@swc\/helpers/.test(importVal)
+const external = [/node_modules/]
 const plugins = targets => [
   nodeResolve({
     extensions
