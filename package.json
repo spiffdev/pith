@@ -78,8 +78,6 @@
     "prepare": "yarn run build"
   },
   "dependencies": {
-    "@types/offscreencanvas": "^2019.6.4",
-    "@types/raf": "^3.4.0",
     "raf": "^3.4.1",
     "rgbcolor": "^1.0.1",
     "stackblur-canvas": "^2.0.0",
@@ -91,6 +89,7 @@
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.5",
     "@rollup/plugin-replace": "^4.0.0",
+    "@rollup/plugin-typescript": "^11.1.2",
     "@size-limit/preset-small-lib": "^7.0.8",
     "@swc/core": "^1.2.136",
     "@swc/helpers": "^0.3.2",
@@ -102,7 +101,9 @@
     "@types/jest": "^27.0.2",
     "@types/node": "^17.0.16",
     "@types/node-fetch": "^2.5.12",
+    "@types/offscreencanvas": "^2019.6.4",
     "@types/puppeteer": "^5.4.2",
+    "@types/raf": "^3.4.0",
     "@types/xmldom": "^0.1.29",
     "browserslist": "^4.19.1",
     "canvas": "^2.1.0",
