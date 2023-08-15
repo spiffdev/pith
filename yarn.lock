@@ -1936,7 +1936,7 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
-"@trigen/babel-preset@^8.0.0-alpha.5":
+"@trigen/babel-preset@^8.0.0-alpha.24":
   version "8.0.0-alpha.24"
   resolved "https://registry.yarnpkg.com/@trigen/babel-preset/-/babel-preset-8.0.0-alpha.24.tgz#b83ee6d8d4c934b36bfea040a116fc0da260e65f"
   integrity sha512-SXZL8GKt1WqyxL4GoDRtKj3l1ErQQqkDgOEQV3WDF7OHqdvq9wZMJc3f6CDP1U/3eIKg/lXtWxvHNpSemIta5g==
@@ -1964,12 +1964,12 @@
     babel-plugin-transform-react-remove-prop-types "^0.4.24"
     babel-plugin-transform-remove-imports "^1.5.2"
 
-"@trigen/browserslist-config@^8.0.0-alpha.2":
+"@trigen/browserslist-config@^8.0.0-alpha.24":
   version "8.0.0-alpha.24"
   resolved "https://registry.yarnpkg.com/@trigen/browserslist-config/-/browserslist-config-8.0.0-alpha.24.tgz#d0f2c896656ac22df5475865343c5642dcccb481"
   integrity sha512-h/zjYkGmgQ4qID9HU8B5KQwj56NRb1777gwtIUdZbX5lbGXiYmv9uxTR4FR7SoTR8kBZMqgInAHtm4T0rnuyNA==
 
-"@trigen/eslint-config@^8.0.0-alpha.14":
+"@trigen/eslint-config@^8.0.0-alpha.25":
   version "8.0.0-alpha.25"
   resolved "https://registry.yarnpkg.com/@trigen/eslint-config/-/eslint-config-8.0.0-alpha.25.tgz#9d35a32a265c8dd423916ef5a1fe5de7d8398933"
   integrity sha512-vrUQzZz0bWqi+Z5DNxCe4/scatECuC1DNRx1BNorcxS6CsjGVV1ZPDI8ExUURYF6XQ8eBi96Rci/5XT06gG+/g==
@@ -1984,7 +1984,7 @@
     eslint-plugin-react-hooks "^4.3.0"
     eslint-plugin-testing-library "^5.0.0"
 
-"@trigen/scripts@^8.0.0-alpha.9":
+"@trigen/scripts@^8.0.0-alpha.24":
   version "8.0.0-alpha.24"
   resolved "https://registry.yarnpkg.com/@trigen/scripts/-/scripts-8.0.0-alpha.24.tgz#9eab5b8f925464ca67d8abb2a4ce8867980c2ca9"
   integrity sha512-MQQVG1EE69oqElu9FmVrmawowccGcBQTyOnOpDCdWaCV4xqLP/vGuBckcMhtyXR/TukZAq8h1H0MU/3/R/Dw0w==
