@@ -67,7 +67,7 @@ a image {
 
 body:not(.no-ui) .output {
   border: 1px solid gray;
-  width: 500px;
-  height: 500px;
+  width: 930px;
+  height: 650px;
   overflow: scroll;
 }
