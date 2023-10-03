@@ -126,9 +126,9 @@ export class ImageElement extends RenderedElement {
         ctx,
         aspectRatio: this.getAttribute('preserveAspectRatio').getString(),
         width,
-        desiredWidth: image.width as number,
+        desiredWidth: (image as any).width as number,
         height,
-        desiredHeight: image.height as number
+        desiredHeight: (image as any).height as number
       })
 
       if (this.loaded) {

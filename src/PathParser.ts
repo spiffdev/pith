@@ -34,7 +34,7 @@ export class PathParser extends SVGPathData {
   start: Point = new Point(0, 0)
   current: Point = new Point(0, 0)
   command: Command | null = null
-  override readonly commands: Command[] /* Babel fix: */ = this.commands
+  override readonly commands: Command[] = []
   private i = -1
   private previousCommand: Command | null = null
   private points: Point[] = []
