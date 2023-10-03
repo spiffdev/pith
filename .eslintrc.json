@@ -1,11 +1,5 @@
 {
   "root": true,
-  "extends": [
-    "@trigen/eslint-config",
-    "@trigen/eslint-config/typescript",
-    "@trigen/eslint-config/typescript-requiring-type-checking",
-    "@trigen/eslint-config/jest"
-  ],
   "env": {
     "node": true
   },
@@ -21,6 +15,7 @@
     "@typescript-eslint/no-unsafe-call": "off"
   },
   "plugins": [
-    "html"
+    "html",
+    "@typescript-eslint"
   ]
 }
