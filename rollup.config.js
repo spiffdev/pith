@@ -1,30 +1,26 @@
-import swc from 'rollup-plugin-swc'
 import typescript from '@rollup/plugin-typescript'
 import commonjs from '@rollup/plugin-commonjs'
-import pkg from './package.json'
 
 export default [
   {
-    input: pkg.main,
+    input: './src/index.ts',
     plugins: [
       typescript(),
-      swc(),
     ],
     output: {
-      file: pkg.publishConfig.module,
+      file: './dist/index.js',
       format: 'es',
       sourcemap: true
     }
   },
   {
-    input: pkg.main,
+    input: './src/index.ts',
     plugins: [
       typescript(),
       commonjs(),
-      swc(),
     ],
     output: {
-      file: pkg.publishConfig.main,
+      file: './dist/index.cjs',
       format: 'cjs',
       sourcemap: true
     }
