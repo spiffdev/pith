@@ -8,9 +8,5 @@ export class UnknownElement extends Element {
     captureTextNodes?: boolean
   ) {
     super(document, node, captureTextNodes)
-
-    if (process.env.NODE_ENV !== 'production') {
-      console.warn(`Element ${node.nodeName} not yet implemented.`)
-    }
   }
 }
