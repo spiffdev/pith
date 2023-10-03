@@ -56,7 +56,8 @@
     "build": "rollup -c",
     "start": "NODE_ENV=development rollup -c --watch & node --loader ts-node/esm test/common/server.ts",
     "start:node": "ts-node -P ./tsconfig.dev.json test/node/index.ts",
-    "dev": "vite"
+    "dev": "vite",
+    "prepare": "yarn run build"
   },
   "dependencies": {
     "@types/offscreencanvas": "^2019.6.4",
