@@ -176,7 +176,7 @@ export class Document {
   }
 
   createDocumentElement(document: DOMDocument) {
-    const documentElement = this.createElement<SVGElement>(document.documentElement)
+    const documentElement = this.createElement<SVGElement>(document.documentElement, 'svg')
 
     documentElement.root = true
     documentElement.addStylesFromStyleDefinition()
@@ -186,8 +186,8 @@ export class Document {
     return documentElement
   }
 
-  createElement<T extends Element>(node: HTMLElement) {
-    const elementType = node.nodeName.replace(/^[^:]+:/, '')
+  createElement<T extends Element>(node: HTMLElement, overrideType?: string) {
+    const elementType = overrideType || node.nodeName.replace(/^[^:]+:/, '')
     const ElementType = Document.elementTypes[elementType]
 
     if (ElementType) {
