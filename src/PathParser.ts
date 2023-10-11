@@ -34,7 +34,6 @@ export class PathParser extends SVGPathData {
   start: Point = new Point(0, 0)
   current: Point = new Point(0, 0)
   command: Command | null = null
-  override readonly commands: Command[] = []
   private i = -1
   private previousCommand: Command | null = null
   private points: Point[] = []
@@ -71,7 +70,7 @@ export class PathParser extends SVGPathData {
   }
 
   next() {
-    const command = this.commands[++this.i]
+    const command = this.commands[++this.i] as Command
 
     this.previousCommand = this.command
     this.command = command
