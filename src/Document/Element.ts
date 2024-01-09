@@ -312,3 +312,16 @@ export abstract class Element {
     return this.parent?.children.indexOf(this) === 0
   }
 }
+
+/**
+ * Abstract class for the various Fe tags that can be found in filters.
+ */
+export abstract class FeElement extends Element {
+  abstract apply(
+    ctx: RenderingContext2D,
+    x: number,
+    y: number,
+    width: number,
+    height: number
+  )
+}

@@ -1,9 +1,9 @@
 import { canvasRGBA } from 'stackblur-canvas'
 import { RenderingContext2D } from '../types'
 import { Document } from './Document'
-import { Element } from './Element'
+import { FeElement } from './Element'
 
-export class FeGaussianBlurElement extends Element {
+export class FeGaussianBlurElement extends FeElement {
   override type = 'feGaussianBlur'
   readonly extraFilterDistance: number
   protected readonly blurRadius: number
