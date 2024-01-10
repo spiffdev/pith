@@ -1,11 +1,24 @@
 import { RenderingContext2D } from "src/types";
 import { Document } from './Document'
 import { Element, FeElement } from './Element'
-import { imGet, imSet } from "../util";
+import { imGet, imSet, toNumbers } from "../util";
 
-export class FeFuncR extends Element { }
-export class FeFuncG extends Element { }
-export class FeFuncB extends Element { }
+abstract class FeFuncElement extends Element {
+    readonly tableValues: number[]
+
+    constructor(
+        document: Document,
+        node: HTMLElement,
+        captureTextNodes?: boolean
+    ) {
+        super(document, node, captureTextNodes);
+        this.tableValues = toNumbers(this.getAttribute('values').getString());
+    }
+}
+
+export class FeFuncR extends FeFuncElement { override type = 'feFuncR' }
+export class FeFuncG extends FeFuncElement { override type = 'feFuncG' }
+export class FeFuncB extends FeFuncElement { override type = 'feFuncB' }
 
 export class FeComponentTransfer extends FeElement {
     override type = 'feComponentTransfer';
@@ -18,7 +31,17 @@ export class FeComponentTransfer extends FeElement {
         super(document, node, captureTextNodes);
     }
 
-    override apply(ctx: RenderingContext2D, x: number, y: number, width: number, height: number) {
+    // New pixel value in accordance with the logic in the spec.
+    // https://www.w3.org/TR/SVG11/filters.html#feComponentTransferElement
+    // At the time of writing, assume the func elements are always the discrete type.
+    private calculateDiscrete(old: number, feFunc: FeFuncElement): number {
+        if (old === 1) {
+            return feFunc.tableValues[feFunc.tableValues.length];
+        }
+        return old;
+    }
+
+    override apply(ctx: RenderingContext2D, _x: number, _y: number, width: number, height: number) {
         const { children } = this;
         let rFunc: FeFuncR | undefined = undefined;
         let gFunc: FeFuncG | undefined = undefined;
@@ -41,9 +64,9 @@ export class FeComponentTransfer extends FeElement {
                 const r = imGet(srcData.data, x, y, width, height, 0);
                 const g = imGet(srcData.data, x, y, width, height, 1);
                 const b = imGet(srcData.data, x, y, width, height, 2);
-                const nr = r;
-                const ng = g;
-                const nb = b;
+                const nr = this.calculateDiscrete(r, rFunc);
+                const ng = this.calculateDiscrete(g, gFunc);
+                const nb = this.calculateDiscrete(b, bFunc);
                 imSet(srcData.data, x, y, width, height, 0, nr);
                 imSet(srcData.data, x, y, width, height, 1, ng);
                 imSet(srcData.data, x, y, width, height, 2, nb);
