@@ -43,6 +43,7 @@ import { FeColorMatrixElement } from './FeColorMatrixElement'
 import { FeGaussianBlurElement } from './FeGaussianBlurElement'
 import { TitleElement } from './TitleElement'
 import { DescElement } from './DescElement'
+import { FeComponentTransfer, FeFuncB, FeFuncG, FeFuncR } from './FeComponentTransfer'
 
 export const elements = {
   'svg': SVGElement,
@@ -80,7 +81,11 @@ export const elements = {
   'clipPath': ClipPathElement,
   'filter': FilterElement,
   'feDropShadow': FeDropShadowElement,
+  'feFuncR': FeFuncR,
+  'feFuncG': FeFuncG,
+  'feFuncB': FeFuncB,
   'feMorphology': FeMorphologyElement,
+  'feComponentTransfer': FeComponentTransfer,
   'feComposite': FeCompositeElement,
   'feColorMatrix': FeColorMatrixElement,
   'feGaussianBlur': FeGaussianBlurElement,

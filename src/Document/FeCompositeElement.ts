@@ -1,7 +1,7 @@
 import { RenderingContext2D } from '../types'
-import { Element } from './Element'
+import { FeElement } from './Element'
 
-export class FeCompositeElement extends Element {
+export class FeCompositeElement extends FeElement {
   override type = 'feComposite'
 
   apply(

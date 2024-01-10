@@ -1,5 +1,5 @@
 import { RenderingContext2D } from '../types'
-import { Element } from './Element'
+import { Element, FeElement } from './Element'
 import { PathElement } from './PathElement'
 import { FeGaussianBlurElement } from './FeGaussianBlurElement'
 
@@ -61,7 +61,7 @@ export class FilterElement extends Element {
 
     // apply filters
     children.forEach((child: Element) => {
-      if (child instanceof FeGaussianBlurElement && typeof child.apply === 'function') {
+      if (child instanceof FeElement) {
         child.apply(
           tmpCtx,
           0,

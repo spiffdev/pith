@@ -1,30 +1,7 @@
 import { RenderingContext2D } from '../types'
-import { toNumbers } from '../util'
+import { imGet, imSet, toNumbers } from '../util'
 import { Document } from './Document'
-import { Element } from './Element'
-
-function imGet(
-  img: Uint8ClampedArray,
-  x: number,
-  y: number,
-  width: number,
-  _height: number,
-  rgba: number
-) {
-  return img[y * width * 4 + x * 4 + rgba]
-}
-
-function imSet(
-  img: Uint8ClampedArray,
-  x: number,
-  y: number,
-  width: number,
-  _height: number,
-  rgba: number,
-  val: number
-) {
-  img[y * width * 4 + x * 4 + rgba] = val
-}
+import { FeElement } from './Element'
 
 function m(
   matrix: number[],
@@ -45,7 +22,7 @@ function c(
   return m1 + Math.cos(a) * m2 + Math.sin(a) * m3
 }
 
-export class FeColorMatrixElement extends Element {
+export class FeColorMatrixElement extends FeElement {
   override type = 'feColorMatrix'
   protected readonly matrix: number[]
   protected readonly includeOpacity: boolean
