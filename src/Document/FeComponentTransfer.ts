@@ -12,7 +12,7 @@ abstract class FeFuncElement extends Element {
         captureTextNodes?: boolean
     ) {
         super(document, node, captureTextNodes);
-        this.tableValues = toNumbers(this.getAttribute('values').getString());
+        this.tableValues = toNumbers(this.getAttribute('tableValues').getString());
     }
 }
 
@@ -35,10 +35,17 @@ export class FeComponentTransfer extends FeElement {
     // https://www.w3.org/TR/SVG11/filters.html#feComponentTransferElement
     // At the time of writing, assume the func elements are always the discrete type.
     private calculateDiscrete(old: number, feFunc: FeFuncElement): number {
-        if (old === 1) {
-            return feFunc.tableValues[feFunc.tableValues.length];
+        const C = old / 255;
+        const n = feFunc.tableValues.length;
+        if (C === 1) {
+            return feFunc.tableValues[n];
         }
-        return old;
+        for (let k = 0; k < n; k++) {
+            if (k / n <= C && C < (k + 1) / n) {
+                return feFunc.tableValues[k];
+            }
+        }
+        return feFunc.tableValues[0];
     }
 
     override apply(ctx: RenderingContext2D, _x: number, _y: number, width: number, height: number) {
