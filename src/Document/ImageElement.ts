@@ -37,7 +37,9 @@ export class ImageElement extends RenderedElement {
 
   protected async loadImage(href: string) {
     try {
-      const image = await this.document.createImage(href)
+      // Fetch image with anonymous true to prevent canvas from getting marked as tainted.
+      // https://stackoverflow.com/a/27840082
+      const image = await this.document.createImage(href, true)
 
       this.image = image
     } catch (err) {
