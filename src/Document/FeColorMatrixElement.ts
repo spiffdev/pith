@@ -1,30 +1,7 @@
 import { RenderingContext2D } from '../types'
-import { toNumbers } from '../util'
+import { imGet, imSet, toNumbers } from '../util'
 import { Document } from './Document'
 import { FeElement } from './Element'
-
-function imGet(
-  img: Uint8ClampedArray,
-  x: number,
-  y: number,
-  width: number,
-  _height: number,
-  rgba: number
-) {
-  return img[y * width * 4 + x * 4 + rgba]
-}
-
-function imSet(
-  img: Uint8ClampedArray,
-  x: number,
-  y: number,
-  width: number,
-  _height: number,
-  rgba: number,
-  val: number
-) {
-  img[y * width * 4 + x * 4 + rgba] = val
-}
 
 function m(
   matrix: number[],
