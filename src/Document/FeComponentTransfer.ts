@@ -38,14 +38,14 @@ export class FeComponentTransfer extends FeElement {
         const C = old / 255;
         const n = feFunc.tableValues.length;
         if (C === 1) {
-            return feFunc.tableValues[n];
+            return 255 * feFunc.tableValues[n - 1];
         }
         for (let k = 0; k < n; k++) {
             if (k / n <= C && C < (k + 1) / n) {
-                return feFunc.tableValues[k];
+                return 255 * feFunc.tableValues[k];
             }
         }
-        return feFunc.tableValues[0];
+        return 255 * feFunc.tableValues[0];
     }
 
     override apply(ctx: RenderingContext2D, _x: number, _y: number, width: number, height: number) {
