@@ -1,6 +1,5 @@
 {
   "name": "pith",
-  "type": "module",
   "version": "4.0.1",
   "description": "JavaScript SVG parser and renderer on Canvas.",
   "authors": [
@@ -34,26 +33,26 @@
   "sideEffects": false,
   "main": "./src/index.ts",
   "publishConfig": {
-    "main": "./dist/index.cjs",
-    "module": "./dist/index.js",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts",
     "exports": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.js"
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
     },
     "directory": "package"
   },
-  "module": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
-    "require": "./dist/index.cjs",
-    "import": "./dist/index.js"
+    "require": "./dist/index.js",
+    "import": "./dist/index.mjs"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c rollup.config.js",
+    "build": "rollup -c rollup.config.js --bundleConfigAsCjs",
     "dev": "vite",
     "prepare": "yarn run build"
   },

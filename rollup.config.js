@@ -1,28 +1,23 @@
-import typescript from '@rollup/plugin-typescript'
-import commonjs from '@rollup/plugin-commonjs'
+import typescript from "@rollup/plugin-typescript";
+import commonjs from "@rollup/plugin-commonjs";
 
 export default [
   {
-    input: './src/index.ts',
-    plugins: [
-      typescript(),
-    ],
+    input: "./src/index.ts",
+    plugins: [typescript()],
     output: {
-      file: './dist/index.js',
-      format: 'es',
-      sourcemap: true
-    }
+      file: "./dist/index.mjs",
+      format: "esm",
+      sourcemap: true,
+    },
   },
   {
-    input: './src/index.ts',
-    plugins: [
-      typescript(),
-      commonjs(),
-    ],
+    input: "./src/index.ts",
+    plugins: [typescript(), commonjs()],
     output: {
-      file: './dist/index.cjs',
-      format: 'cjs',
-      sourcemap: true
-    }
-  }
-]
+      file: "./dist/index.js",
+      format: "cjs",
+      sourcemap: true,
+    },
+  },
+];
